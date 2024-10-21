@@ -1,7 +1,7 @@
 // server/index.js
 const express = require("express");
 const bodyParser = require("body-parser");
-const fetch = require("node-fetch"); // Or you can use axios
+const fetch = (async () => await import("node-fetch"))();
 const dotenv = require("dotenv"); // Import dotenv to load .env variables
 
 // Load environment variables from the .env file
