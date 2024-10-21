@@ -3,7 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const fetch = (async () => await import("node-fetch"))();
 const dotenv = require("dotenv"); // Import dotenv to load .env variables
-
+const cors = require("cors");
 // Load environment variables from the .env file
 dotenv.config();
 
@@ -15,6 +15,7 @@ const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 let monitoring = false;
 
 app.use(bodyParser.json());
+app.use(cors());
 
 app.post("/api/start-monitoring", async (req, res) => {
   const { currencyPair, id } = req.body;
