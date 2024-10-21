@@ -43,7 +43,7 @@ app.post("/api/stop-monitoring", (req, res) => {
   res.send("Monitoring stopped");
 });
 app.get("/", async (req, res) => {
-  return res.json({ flag: truse, message: "server is working" });
+  return res.json({ flag: "true", message: "server is working" });
 });
 // Function to fetch candle data
 const fetchCandleData = async (currencyPair) => {
